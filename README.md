@@ -33,12 +33,6 @@ yok.
 - Durumsuz CSRF koruması, gerçek yeniden kodlama, doğrudan ikili yanıt.
 - Arayüz Türkçe; açık/koyu tema; gerçek sınırlar arayüzde gösterilir.
 
-## Ekran görüntüsü
-
-Bu depoda ekran görüntüsü **yoktur**; uydurma görsel eklenmemiştir. Kendi görüntünüzü
-PHP sunucusunda aracı açıp 1440 px ve 390 px genişlikte alın; PHP sürümünü ve yüklü
-eklentileri belirtin.
-
 ## Gereksinimler
 
 - PHP **8.1+** (test edilen: 8.3.36).
@@ -125,14 +119,6 @@ ayarlarını ve web kökü dışında bir `error_log` yolu kullanın.
 - Harici motorların kendi lisans ve güvenlik koşulları geçerlidir; bu depo onları
   içermez ve kurmaz.
 
-## Lisans
-
-- Bu proje için **henüz bir lisans seçilmemiştir**; bu depoda `LICENSE` dosyası yoktur.
-  Yayına almadan önce sahibinin lisans seçip eklemesi gerekir. Bu README lisans vaadi değildir.
-- Dosya içinde gömülü üçüncü taraf PHP/JS kütüphanesi yoktur; tüm kod bu dosyadadır.
-- İsteğe bağlı harici motorlar (FFmpeg, LibreOffice, Poppler, Imagick, rsvg, 7-Zip)
-  kendi lisanslarına tabidir ve bu depoda dağıtılmaz.
-
 ## Test edilenler
 
 2026-10-28, PHP 8.3.36 ve Edge/Chromium 156 ile; portfolyo dizini dışındaki geçici bir
@@ -163,18 +149,3 @@ Ek olarak portfolyo deposundaki test paketleri bu dosyanın mantığını kapsar
 - RAR yalnızca okunabilir; RAR oluşturulmaz.
 - Çok büyük dosyalarda (php.ini sınırına yakın) bellek ve süre davranışı ölçülmedi.
 - E-posta/antivirüs tarayıcılarının indirilen dosyalara müdahalesi test edilmedi.
-
-## Ayrı GitHub deposu olarak yayınlama
-
-1. Bu klasörü yeni depoya kopyalayın (`fileconverter.php`, `README.md`).
-2. GitHub Pages **uygun değildir**. PHP 8.1+ çalıştıran bir barındırma seçin (paylaşımlı
-   hosting, VPS, konteyner veya yönetilen PHP platformu).
-3. İsteğe bağlı olarak dosyayı `index.php` yapın; form hedefi çalışma anında hesaplandığı
-   için yol değişikliği işlevi bozmaz.
-4. `gd`, `fileinfo`, `PharData`, `zlib`, `dom` eklentilerini etkinleştirin;
-   `upload_max_filesize`/`post_max_size` değerlerini araç sınırlarıyla uyumlu ayarlayın.
-5. Üretimde `display_errors=Off`, `expose_php=Off` ve web kökü dışında log yolu kullanın;
-   HTTPS'i zorunlu kılın (CSRF çerezi `SameSite=Strict` olsa da HTTPS önerilir).
-6. Yayın sonrası gerçek bir PNG → WebP dönüşümü, CSRF reddi, 413/415 yolları ve geçici
-   dizin temizliğini doğrulayın.
-7. Lisans seçip `LICENSE` ekleyin; gerçek ekran görüntüsü ekleyin.
